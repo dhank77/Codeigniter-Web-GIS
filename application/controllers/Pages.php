@@ -16,7 +16,7 @@ class Pages extends CI_Controller
 		foreach($data as $d){
 			$marker = array();
 			$marker['position'] = $d['latlong'];
-			$marker['infowindow_content'] = $d['keterangan'];
+			$marker['infowindow_content'] = "<div class='infoW'><div class='paWrapper'><div style='background-color:#fff;'><table class='table table-striped table-bordered'><tbody><tr><th colspan='6' style='text-align: center'>DETAIL INFORMASI</th></tr><tr><td colspan='2'>Nama Wisata :</td><td colspan='4'>{$d['nama']}</td></tr><tr><td colspan='2'>Jalan :</td><td colspan='4'>{$d['keterangan']}</td></tr></tbody></table></div></div></div>";
 			$marker['icon'] = $d['icon'];
 			$this->googlemaps->add_marker($marker);
 		}
